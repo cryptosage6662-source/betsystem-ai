@@ -1,0 +1,181 @@
+#!/usr/bin/env python3
+"""
+Real-time Monitoring Dashboard for Polymarket Paper Trading
+View portfolio status, P&L, trades, and performance metrics
+"""
+
+import json
+import os
+from datetime import datetime, timedelta
+from typing import Dict, List
+import statistics
+
+def load_positions() -> Dict:
+    """Load current positions"""
+    positions_file = "/data/.openclaw/workspace/positions.json"
+    if os.path.exists(positions_file):
+        try:
+            with open(positions_file, 'r') as f:
+                return json.load(f)
+        except:
+            pass
+    return {"positions": [], "cash": 100.0, "equity": 100.0, "max_drawdown": 0.0, "consecutive_losses": 0}
+
+def load_trades() -> List[Dict]:
+    """Load trade history"""
+    trades_file = "/data/.openclaw/workspace/trades.json"
+    if os.path.exists(trades_file):
+        try:
+            with open(trades_file, 'r') as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
+        except:
+            return []
+    return []
+
+def load_equity_history() -> List[Dict]:
+    """Load equity history"""
+    equity_file = "/data/.openclaw/workspace/equity_live.json"
+    if os.path.exists(equity_file):
+        try:
+            with open(equity_file, 'r') as f:
+                data = json.load(f)
+                return data if isinstance(data, list) else []
+        except:
+            return []
+    return []
+
+def calculate_metrics(trades: List[Dict], equity_history: List[Dict]) -> Dict:
+    """Calculate performance metrics"""
+    
+    # Separate buy and sell trades
+    sells = [t for t in trades if t["type"] == "SELL"]
+    
+    if not sells:
+        return {
+            "total_trades": len(trades),
+            "winning_trades": 0,
+            "losing_trades": 0,
+            "win_rate": 0.0,
+            "total_pnl": 0.0,
+            "avg_win": 0.0,
+            "avg_loss": 0.0,
+            "profit_factor": 0.0,
+            "max_drawdown": 0.0,
+            "sharpe_ratio": 0.0,
+        }
+    
+    # Calculate P&L metrics
+    wins = [t["realized_pnl"] for t in sells if t["realized_pnl"] > 0]
+    losses = [t["realized_pnl"] for t in sells if t["realized_pnl"] <= 0]
+    
+    total_pnl = sum(t["realized_pnl"] for t in sells)
+    
+    win_rate = len(wins) / len(sells) if sells else 0
+    avg_win = statistics.mean(wins) if wins else 0
+    avg_loss = statistics.mean(losses) if losses else 0
+    
+    gross_profit = sum(wins) if wins else 0
+    gross_loss = abs(sum(losses)) if losses else 0
+    profit_factor = gross_profit / gross_loss if gross_loss > 0 else 0
+    
+    # Calculate equity metrics
+    if equity_history:
+        equities = [e["equity"] for e in equity_history]
+        max_drawdown = max([(equities[0] - e) / equities[0] for e in equities] + [0])
+        
+        # Simple Sharpe ratio (daily returns)
+        if len(equities) > 1:
+            returns = [(equities[i+1] - equities[i]) / equities[i] for i in range(len(equities)-1)]
+            if returns and statistics.stdev(returns) > 0:
+                sharpe_ratio = (statistics.mean(returns) * 252) / (statistics.stdev(returns) * (252**0.5))
+            else:
+                sharpe_ratio = 0.0
+        else:
+            sharpe_ratio = 0.0
+    else:
+        max_drawdown = 0.0
+        sharpe_ratio = 0.0
+    
+    return {
+        "total_trades": len(sells),
+        "winning_trades": len(wins),
+        "losing_trades": len(losses),
+        "win_rate": win_rate,
+        "total_pnl": total_pnl,
+        "avg_win": avg_win,
+        "avg_loss": avg_loss,
+        "profit_factor": profit_factor,
+        "max_drawdown": max_drawdown,
+        "sharpe_ratio": sharpe_ratio,
+    }
+
+def print_dashboard():
+    """Print formatted dashboard"""
+    positions = load_positions()
+    trades = load_trades()
+    equity_history = load_equity_history()
+    metrics = calculate_metrics(trades, equity_history)
+    
+    print("\n" + "="*70)
+    print(" " * 15 + "POLYMARKET PAPER TRADING DASHBOARD")
+    print("="*70)
+    
+    # Portfolio Summary
+    print(f"\n📊 PORTFOLIO STATUS")
+    print(f"  Bankroll:              ${positions.get('cash', 0):.2f}")
+    print(f"  Current Equity:        ${positions.get('equity', 0):.2f}")
+    print(f"  P&L:                   ${positions.get('equity', 100) - 100:.2f} ({(positions.get('equity', 100) / 100 - 1) * 100:.2f}%)")
+    print(f"  Max Drawdown:          {positions.get('max_drawdown', 0):.2%}")
+    print(f"  Consecutive Losses:    {positions.get('consecutive_losses', 0)}/3 🔴" if positions.get('consecutive_losses', 0) >= 3 else f"  Consecutive Losses:    {positions.get('consecutive_losses', 0)}/3")
+    
+    # Open Positions
+    if positions.get("positions"):
+        print(f"\n🔓 OPEN POSITIONS ({len(positions['positions'])})")
+        for i, pos in enumerate(positions["positions"], 1):
+            emoji = "📈" if pos["unrealized_pnl_pct"] > 0 else "📉"
+            print(f"  {i}. {pos['market_question'][:40]}")
+            print(f"     Entry: ${pos['entry_price']:.3f} | Current: ${pos['current_price']:.3f}")
+            print(f"     P&L: ${pos['unrealized_pnl']:.2f} ({pos['unrealized_pnl_pct']:.2%}) {emoji}")
+            print(f"     Strategy: {pos['strategy']} | Stops: -{pos['stop_loss_pct']:.0%} / +{pos['profit_target_pct']:.0%}")
+    else:
+        print(f"\n🔓 OPEN POSITIONS: None")
+    
+    # Performance Metrics
+    print(f"\n📈 PERFORMANCE METRICS")
+    print(f"  Total Trades:          {metrics['total_trades']}")
+    print(f"  Winning Trades:        {metrics['winning_trades']}")
+    print(f"  Losing Trades:         {metrics['losing_trades']}")
+    print(f"  Win Rate:              {metrics['win_rate']:.1%}")
+    print(f"  Total P&L:             ${metrics['total_pnl']:.2f}")
+    print(f"  Avg Win:               ${metrics['avg_win']:.2f}")
+    print(f"  Avg Loss:              ${metrics['avg_loss']:.2f}")
+    print(f"  Profit Factor:         {metrics['profit_factor']:.2f}")
+    print(f"  Max Drawdown:          {metrics['max_drawdown']:.2%}")
+    print(f"  Sharpe Ratio:          {metrics['sharpe_ratio']:.2f}")
+    
+    # Recent Trades
+    if trades:
+        print(f"\n💬 RECENT TRADES (Last 5)")
+        for trade in trades[-5:]:
+            trade_type = "🟢 BUY " if trade["type"] == "BUY" else "🔴 SELL"
+            if trade["type"] == "SELL":
+                pnl_emoji = "✅" if trade["realized_pnl"] > 0 else "❌"
+                print(f"  {trade_type} {pnl_emoji} {trade['market'][:35]} @ ${trade['price']:.3f} | P&L: ${trade['realized_pnl']:.2f}")
+            else:
+                print(f"  {trade_type} {trade['market'][:35]} @ ${trade['price']:.3f} ({trade['strategy']})")
+    
+    # Equity Curve
+    if equity_history:
+        print(f"\n📊 EQUITY CURVE (Last 10 cycles)")
+        for e in equity_history[-10:]:
+            time_str = e["timestamp"].split("T")[1][:5]
+            eq = e["equity"]
+            pnl_pct = (eq / 100 - 1) * 100
+            pnl_emoji = "📈" if pnl_pct > 0 else "📉"
+            print(f"  {time_str}: ${eq:.2f} ({pnl_pct:+.2f}%) {pnl_emoji}")
+    
+    print("\n" + "="*70 + "\n")
+
+if __name__ == "__main__":
+    print_dashboard()

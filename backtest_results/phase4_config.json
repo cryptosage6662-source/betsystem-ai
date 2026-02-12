@@ -1,0 +1,37 @@
+{
+  "position_sizing": {
+    "100": {
+      "recommended": "0.5%",
+      "amount": 0.5,
+      "strategy": "Conservative - Best Sharpe ratio"
+    },
+    "1000": {
+      "recommended": "1.0%",
+      "amount": 10.0,
+      "strategy": "Moderate - Balanced risk/reward"
+    },
+    "10000": {
+      "recommended": "0.5% (conservative) or 5% (aggressive)",
+      "amount_conservative": 50.0,
+      "amount_aggressive": 500.0,
+      "strategy": "Choose based on risk tolerance"
+    }
+  },
+  "circuit_breaker": {
+    "consecutive_losses": 3,
+    "action": "STOP_TRADING"
+  },
+  "stop_loss": {
+    "percent": 10,
+    "description": "Exit if position down 10% from entry"
+  },
+  "take_profit": {
+    "percent": 60,
+    "description": "Exit if YES price above 0.60 (60%)"
+  },
+  "max_concurrent_positions": {
+    "100": 3,
+    "1000": 4,
+    "10000": 5
+  }
+}

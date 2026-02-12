@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # FastAPI Backend
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: betsystem-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./betsystem.db
+      - DEBUG=False
+    volumes:
+      - ./betsystem.db:/app/betsystem.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - betsystem-network
+    restart: unless-stopped
+
+  # React Frontend
+  frontend:
+    build:
+      context: ./betsystem-ui
+      dockerfile: Dockerfile
+    container_name: betsystem-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - betsystem-network
+    restart: unless-stopped
+
+networks:
+  betsystem-network:
+    driver: bridge
+
+volumes:
+  betsystem-db:
+    driver: local

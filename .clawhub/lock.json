@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "skills": {
+    "hyperliquid-trading": {
+      "version": "1.0.0",
+      "installedAt": 1770669731403
+    },
+    "binance-pro": {
+      "version": "1.0.0",
+      "installedAt": 1770669739493
+    },
+    "polymarket-odds": {
+      "version": "1.0.0",
+      "installedAt": 1770669743709
+    },
+    "crypto-price": {
+      "version": "0.2.2",
+      "installedAt": 1770669745667
+    },
+    "deepseek-trader": {
+      "version": "1.1.0",
+      "installedAt": 1770669747066
+    },
+    "football-automated-value-betting": {
+      "version": "1.0.0",
+      "installedAt": 1770669748470
+    },
+    "crypto-agent-payments": {
+      "version": "0.1.7",
+      "installedAt": 1770669749883
+    },
+    "chronobets": {
+      "version": "1.0.0",
+      "installedAt": 1770669755019
+    },
+    "crypto-gold-monitor": {
+      "version": "1.2.1",
+      "installedAt": 1770669756436
+    },
+    "crypto-levels": {
+      "version": "1.0.3",
+      "installedAt": 1770754811830
+    },
+    "binance": {
+      "version": "1.1.0",
+      "installedAt": 1770754983422
+    },
+    "onchain": {
+      "version": "0.3.0",
+      "installedAt": 1770755433203
+    },
+    "game-theory": {
+      "version": "1.0.0",
+      "installedAt": 1770764494820
+    },
+    "polymarket": {
+      "version": "1.0.0",
+      "installedAt": 1770764663756
+    },
+    "polymarket-agent": {
+      "version": "1.0.2",
+      "installedAt": 1770765776370
+    },
+    "youtube-watcherkx": {
+      "version": "1.0.0",
+      "installedAt": 1770840249797
+    },
+    "tavily-search": {
+      "version": "1.0.0",
+      "installedAt": 1770891502130
+    },
+    "sportsbet-advisor": {
+      "version": "1.0.1",
+      "installedAt": 1770893787913
+    },
+    "cost-prediction": {
+      "version": "1.0.0",
+      "installedAt": 1770894340096
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "A_Dynamic_Threshold": {
+    "final": 960.762153086081,
+    "return": -3.9237846913919046
+  },
+  "B_Reversal_Trading": {
+    "final": 1008.8820052915428,
+    "return": 0.8882005291542783
+  },
+  "C_Market_Regime": {
+    "final": 979.6329175477118,
+    "return": -2.036708245228817
+  },
+  "D_Aggressive_Scaling": {
+    "final": 979.6329175477118,
+    "return": -2.036708245228817
+  }
+}

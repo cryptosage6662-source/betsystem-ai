@@ -1,0 +1,61 @@
+{
+  "timestamp": "2026-02-11T21:35:06.372439+00:00",
+  "count": 3,
+  "trades": [
+    {
+      "trade_id": "trade_test_market_3_2026-02-11T21-35-06.371227+00-00",
+      "market_id": "test_market_3",
+      "question": "Test market 1",
+      "entry_time": "2026-02-11T21:35:06.371112+00:00",
+      "entry_price": 0.5,
+      "exit_time": "2026-02-11T21:35:06.371231+00:00",
+      "exit_price": 0.3,
+      "quantity": 10.0,
+      "p_l": -200.0,
+      "p_l_percent": -40.0,
+      "signal": "Test trade",
+      "exit_reason": "Test close"
+    },
+    {
+      "trade_id": "trade_test_market_4_2026-02-11T21-35-06.371664+00-00",
+      "market_id": "test_market_4",
+      "question": "Test market 2",
+      "entry_time": "2026-02-11T21:35:06.371120+00:00",
+      "entry_price": 0.5,
+      "exit_time": "2026-02-11T21:35:06.371671+00:00",
+      "exit_price": 0.3,
+      "quantity": 10.0,
+      "p_l": -200.0,
+      "p_l_percent": -40.0,
+      "signal": "Test trade",
+      "exit_reason": "Test close"
+    },
+    {
+      "trade_id": "trade_test_market_5_2026-02-11T21-35-06.372211+00-00",
+      "market_id": "test_market_5",
+      "question": "Test market 3",
+      "entry_time": "2026-02-11T21:35:06.371124+00:00",
+      "entry_price": 0.5,
+      "exit_time": "2026-02-11T21:35:06.372217+00:00",
+      "exit_price": 0.3,
+      "quantity": 10.0,
+      "p_l": -200.0,
+      "p_l_percent": -40.0,
+      "signal": "Test trade",
+      "exit_reason": "Test close"
+    }
+  ],
+  "metrics": {
+    "total_trades": 3,
+    "winning_trades": 0,
+    "losing_trades": 3,
+    "total_p_l": -600.0,
+    "win_rate": 0.0,
+    "consecutive_wins": 0,
+    "consecutive_losses": 3,
+    "max_consecutive_losses": 3,
+    "avg_win": 0.0,
+    "avg_loss": -200.0
+  },
+  "circuit_breaker_active": true
+}

@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-02-11T21:35:27.613838+00:00",
+  "count": 2,
+  "positions": [
+    {
+      "position_id": "pos_12345_2026-02-11T22-30-00",
+      "market_id": "12345",
+      "question": "Will BTC break $50k before April 2026?",
+      "entry_time": "2026-02-11T22:30:00+00:00",
+      "entry_price": 0.35,
+      "quantity": 10.0,
+      "signal": "price 0.35 below threshold 0.40 | volume $1,500,000 sufficient | liquidity $5,000 sufficient | 45 days to expiry"
+    },
+    {
+      "position_id": "pos_23456_2026-02-11T22-31-00",
+      "market_id": "23456",
+      "question": "Will ETH be above $2000 by March 2026?",
+      "entry_time": "2026-02-11T22:31:00+00:00",
+      "entry_price": 0.38,
+      "quantity": 10.0,
+      "signal": "price 0.38 below threshold 0.40 | volume $1,200,000 sufficient | liquidity $4,500 sufficient | 30 days to expiry"
+    }
+  ]
+}

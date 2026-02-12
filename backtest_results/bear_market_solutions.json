@@ -1,0 +1,50 @@
+{
+  "baseline": {
+    "1000": {
+      "final": 941.5519933153852,
+      "return": -5.844800668461483,
+      "trades": 3,
+      "win_rate": 0.0
+    }
+  },
+  "solution_1_trend_filter": {
+    "1000": {
+      "final": 967.0622921863732,
+      "return": -3.293770781362684,
+      "trades": 3,
+      "win_rate": 33.33333333333333
+    }
+  },
+  "solution_2_short_bias": {
+    "1000": {
+      "final": 965.6127050596716,
+      "return": -3.438729494032839,
+      "trades": 3,
+      "win_rate": 33.33333333333333
+    }
+  },
+  "solution_3_volatility_stops": {
+    "1000": {
+      "final": 941.5519933153852,
+      "return": -5.844800668461483,
+      "trades": 3,
+      "win_rate": 0.0
+    }
+  },
+  "solution_4_inverse_signals": {
+    "1000": {
+      "final": 965.6127050596716,
+      "return": -3.438729494032839,
+      "trades": 3,
+      "win_rate": 33.33333333333333
+    }
+  },
+  "solution_5_hybrid": {
+    "1000": {
+      "final": 967.0622921863732,
+      "return": -3.293770781362684,
+      "trades": 3,
+      "win_rate": 33.33333333333333
+    }
+  }
+}

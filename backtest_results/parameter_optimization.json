@@ -1,0 +1,506 @@
+{
+  "configurations": [
+    {
+      "config": "Smaller Position (0.3%)",
+      "avg_return": -0.9256343434313237,
+      "std_dev": 1.6032457120537116,
+      "score": -1.7272571994581796,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 962.974626262747,
+          "return": -3.7025373737252947,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Aggressive All-Around",
+      "avg_return": -1.2741762827664986,
+      "std_dev": 2.206938059550824,
+      "score": -2.377645312541911,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 949.0329486893401,
+          "return": -5.0967051310659945,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Tight Stop Loss",
+      "avg_return": -1.3047564397621498,
+      "std_dev": 2.259904445170725,
+      "score": -2.4347086623475125,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 947.809742409514,
+          "return": -5.219025759048599,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Aggressive Entry, Normal Exit",
+      "avg_return": -1.3212662892024156,
+      "std_dev": 2.288500343226578,
+      "score": -2.4655164608157047,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 947.1493484319034,
+          "return": -5.2850651568096625,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "BASELINE (Standard)",
+      "avg_return": -1.5427239057188729,
+      "std_dev": 2.672076186756186,
+      "score": -2.878761999096966,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 938.2910437712451,
+          "return": -6.170895622875491,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Tight Profit Target",
+      "avg_return": -1.5427239057188729,
+      "std_dev": 2.672076186756186,
+      "score": -2.878761999096966,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 938.2910437712451,
+          "return": -6.170895622875491,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Mid Entry, Normal Exit",
+      "avg_return": -1.7368555584460155,
+      "std_dev": 3.0083220726369144,
+      "score": -3.2410165947644725,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 930.5257776621594,
+          "return": -6.947422233784062,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Conservative All-Around",
+      "avg_return": -1.7813233683360434,
+      "std_dev": 3.0853425786677566,
+      "score": -3.323994657669922,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 928.7470652665583,
+          "return": -7.125293473344174,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Conservative Entry",
+      "avg_return": -1.7813233683360468,
+      "std_dev": 3.0853425786677624,
+      "score": -3.323994657669928,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 928.7470652665581,
+          "return": -7.125293473344187,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    },
+    {
+      "config": "Larger Position (1%)",
+      "avg_return": -3.0854478114377457,
+      "std_dev": 5.344152373512372,
+      "score": -5.757523998193932,
+      "results": {
+        "bull": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "bear": {
+          "final": 876.5820875424902,
+          "return": -12.341791245750983,
+          "trades": 3
+        },
+        "sideways": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        },
+        "volatile": {
+          "final": 1000.0,
+          "return": 0.0,
+          "trades": 0
+        }
+      }
+    }
+  ],
+  "detailed_results": {
+    "Aggressive Entry, Normal Exit": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 947.1493484319034,
+        "return": -5.2850651568096625,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Mid Entry, Normal Exit": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 930.5257776621594,
+        "return": -6.947422233784062,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "BASELINE (Standard)": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 938.2910437712451,
+        "return": -6.170895622875491,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Tight Profit Target": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 938.2910437712451,
+        "return": -6.170895622875491,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Tight Stop Loss": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 947.809742409514,
+        "return": -5.219025759048599,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Conservative Entry": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 928.7470652665581,
+        "return": -7.125293473344187,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Smaller Position (0.3%)": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 962.974626262747,
+        "return": -3.7025373737252947,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Larger Position (1%)": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 876.5820875424902,
+        "return": -12.341791245750983,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Aggressive All-Around": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 949.0329486893401,
+        "return": -5.0967051310659945,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    },
+    "Conservative All-Around": {
+      "bull": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "bear": {
+        "final": 928.7470652665583,
+        "return": -7.125293473344174,
+        "trades": 3
+      },
+      "sideways": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      },
+      "volatile": {
+        "final": 1000.0,
+        "return": 0.0,
+        "trades": 0
+      }
+    }
+  }
+}

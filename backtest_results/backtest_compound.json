@@ -1,0 +1,92 @@
+{
+  "$100": {
+    "bull": {
+      "initial": 100,
+      "final": 100.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "bear": {
+      "initial": 100,
+      "final": 103.74243867063349,
+      "return": 3.7424386706334896,
+      "trades": 2,
+      "win_rate": 50.0
+    },
+    "sideways": {
+      "initial": 100,
+      "final": 100.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "volatile": {
+      "initial": 100,
+      "final": 100.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    }
+  },
+  "$1000": {
+    "bull": {
+      "initial": 1000,
+      "final": 1000.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "bear": {
+      "initial": 1000,
+      "final": 982.3295262447947,
+      "return": -1.7670473755205307,
+      "trades": 3,
+      "win_rate": 33.33333333333333
+    },
+    "sideways": {
+      "initial": 1000,
+      "final": 1000.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "volatile": {
+      "initial": 1000,
+      "final": 1067.5530162668072,
+      "return": 6.755301626680716,
+      "trades": 1,
+      "win_rate": 100.0
+    }
+  },
+  "$10000": {
+    "bull": {
+      "initial": 10000,
+      "final": 10000.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "bear": {
+      "initial": 10000,
+      "final": 9398.433770354259,
+      "return": -6.015662296457413,
+      "trades": 3,
+      "win_rate": 0.0
+    },
+    "sideways": {
+      "initial": 10000,
+      "final": 10000.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    },
+    "volatile": {
+      "initial": 10000,
+      "final": 10000.0,
+      "return": 0.0,
+      "trades": 0,
+      "win_rate": 0
+    }
+  }
+}
