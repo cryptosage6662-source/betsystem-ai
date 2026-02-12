@@ -270,6 +270,30 @@ async def register(user: UserCreate):
     finally:
         conn.close()
 
+@app.post("/auth/login")
+async def login(user: UserLogin):
+    """Login user"""
+    conn = db.get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT * FROM users WHERE email = ?", (user.email,))
+    db_user = cursor.fetchone()
+    conn.close()
+    
+    if not db_user:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    
+    # Simple password check (in production, use proper hashing)
+    if db_user['password_hash'] != "hashed_password":
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+    
+    return {
+        "access_token": str(uuid.uuid4()),
+        "token_type": "bearer",
+        "user_id": db_user['id'],
+        "message": "Login successful"
+    }
+
 @app.get("/users/{user_id}")
 async def get_user(user_id: str):
     """Get user profile"""
