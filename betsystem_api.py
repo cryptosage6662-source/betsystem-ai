@@ -43,7 +43,7 @@ class UserCreate(BaseModel):
     username: str
 
 class UserLogin(BaseModel):
-    email: str
+    username: str
     password: str
 
 class BankrollUpdate(BaseModel):
@@ -276,7 +276,7 @@ async def login(user: UserLogin):
     conn = db.get_connection()
     cursor = conn.cursor()
     
-    cursor.execute("SELECT * FROM users WHERE email = ?", (user.email,))
+    cursor.execute("SELECT * FROM users WHERE username = ?", (user.username,))
     db_user = cursor.fetchone()
     conn.close()
     
